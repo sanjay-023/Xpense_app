@@ -25,37 +25,39 @@ class _ScreenHomeState extends State<ScreenHome> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-            child: Padding(
-      padding: const EdgeInsets.all(26),
-      child: SizedBox(
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Text(
-                  'Welcome,$profName',
-                  style: GoogleFonts.signika(
-                      textStyle: const TextStyle(fontSize: 24)),
-                ),
-              ],
-            ),
-            commonSizedBox(20),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child: SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(26),
+        child: SizedBox(
+          child: Column(
+            children: [
+              Row(
                 children: [
-                  dateWidget('April', true),
-                  dateWidget('May', false),
-                  dateWidget('Jun', false),
-                  dateWidget('Jul', false),
-                  dateWidget('Aug', false)
+                  Text(
+                    'Welcome,$profName',
+                    style: GoogleFonts.signika(
+                        textStyle: const TextStyle(fontSize: 24)),
+                  ),
                 ],
               ),
-            ),
-            commonSizedBox(30),
-            balanceCard()
-          ],
+              commonSizedBox(20),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    dateWidget('April', true),
+                    dateWidget('May', false),
+                    dateWidget('Jun', false),
+                    dateWidget('Jul', false),
+                    dateWidget('Aug', false)
+                  ],
+                ),
+              ),
+              commonSizedBox(30),
+              balanceCard()
+            ],
+          ),
         ),
       ),
     )));
