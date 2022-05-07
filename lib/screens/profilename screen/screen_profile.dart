@@ -97,9 +97,7 @@ class ScreenProfile extends StatelessWidget {
       await _sharedprfns.setString(saveKey, profilename);
 
       Navigator.of(ctx).pushReplacement(MaterialPageRoute(builder: (ctx1) {
-        return ScreenDash(
-          profname: profilename,
-        );
+        return const ScreenDash();
       }));
     } else {
       ScaffoldMessenger.of(ctx).showSnackBar(

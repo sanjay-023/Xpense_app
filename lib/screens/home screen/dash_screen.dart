@@ -9,9 +9,9 @@ import 'package:xpense_app/screens/settingscreen/screen_settings.dart';
 import 'package:xpense_app/screens/statistics/screen_statistics.dart';
 
 class ScreenDash extends StatefulWidget {
-  final profname;
-
-  const ScreenDash({Key? key, required this.profname}) : super(key: key);
+  const ScreenDash({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<ScreenDash> createState() => _ScreenDashState();
