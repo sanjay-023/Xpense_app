@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 String type = 'Income';
 
 class TransType extends StatefulWidget {
-  TransType({Key? key}) : super(key: key);
+  const TransType({Key? key}) : super(key: key);
 
   @override
   State<TransType> createState() => _TransTypeState();
@@ -25,6 +25,7 @@ class _TransTypeState extends State<TransType> {
           selectedColor: const Color.fromARGB(255, 139, 9, 204),
           labelStyle: const TextStyle(color: Colors.white),
           onSelected: (val) {
+            FocusManager.instance.primaryFocus?.unfocus();
             if (val) {
               setState(() {
                 type = 'Income';
@@ -45,6 +46,7 @@ class _TransTypeState extends State<TransType> {
           selectedColor: const Color.fromARGB(255, 139, 9, 204),
           labelStyle: const TextStyle(color: Colors.white),
           onSelected: (val) {
+            FocusManager.instance.primaryFocus?.unfocus();
             if (val) {
               setState(() {
                 type = 'Expense';

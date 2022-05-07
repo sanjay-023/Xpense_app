@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:xpense_app/screens/home%20screen/widgets/custom_icons.dart';
 
+DateTime selectedDate = DateTime.now();
+
 class Datepick extends StatefulWidget {
   Datepick({Key? key}) : super(key: key);
 
@@ -9,8 +11,6 @@ class Datepick extends StatefulWidget {
 }
 
 class _DatepickState extends State<Datepick> {
-  DateTime selectedDate = DateTime.now();
-
   List<String> month = [
     'Jan',
     'Feb',

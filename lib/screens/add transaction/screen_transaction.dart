@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:xpense_app/screens/add%20transaction/widget/amount_widget.dart';
+import 'package:xpense_app/screens/add%20transaction/widget/category_widget.dart';
 import 'package:xpense_app/screens/add%20transaction/widget/date_pick.dart';
-import 'package:xpense_app/screens/add%20transaction/widget/text_box.dart';
+
 import 'package:xpense_app/screens/add%20transaction/widget/trans_type.dart';
 import 'package:xpense_app/screens/home%20screen/widgets/common_widget.dart';
-import 'package:xpense_app/screens/home%20screen/widgets/custom_icons.dart';
 
 class ScreenAddTransaction extends StatefulWidget {
-  ScreenAddTransaction({Key? key}) : super(key: key);
+  const ScreenAddTransaction({Key? key}) : super(key: key);
 
   @override
   State<ScreenAddTransaction> createState() => _ScreenAddTransactionState();
@@ -43,19 +44,11 @@ class _ScreenAddTransactionState extends State<ScreenAddTransaction> {
                               fontSize: 30, fontWeight: FontWeight.w600)),
                     ),
                     commonSizedBox(30),
-                    commonTextBox(
-                        ticon: MyFlutterApp.rupee,
-                        htext: 'Enter Amount',
-                        controller: amountcontroller,
-                        ktype: TextInputType.number),
+                    const AmountWidget(),
                     commonSizedBox(20),
-                    commonTextBox(
-                        ticon: MyFlutterApp.category,
-                        htext: 'Category',
-                        controller: categorycontroller,
-                        ktype: TextInputType.text),
+                    const CategoryWidget(),
                     commonSizedBox(20),
-                    Padding(
+                    const Padding(
                         padding: EdgeInsets.symmetric(horizontal: 30),
                         child: TransType()),
                     commonSizedBox(20),
@@ -64,6 +57,10 @@ class _ScreenAddTransactionState extends State<ScreenAddTransaction> {
                     ElevatedButton(
                         onPressed: () {
                           Navigator.of(context).pop();
+                          print(amount);
+                          print(category);
+                          print(selectedDate);
+                          print(type);
                         },
                         child: const Text('Add'),
                         style: ElevatedButton.styleFrom(
